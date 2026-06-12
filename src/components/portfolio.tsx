@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
-const categories = ['All', 'Automation', 'AI Agents', 'Funnels', 'E-commerce'];
+const categories = ['All', 'Automation', 'AI Agents', 'Funnels', 'E-commerce', 'Websites'];
 
 const projects = [
   {
@@ -169,11 +169,35 @@ const projects = [
   },
   {
     title: 'AI Series Masterclass',
-    category: 'E-commerce',
-    description: 'Learning Management System for selling AI courses with dark-themed design and GCash enrollment.',
-    tech: ['React', 'Supabase', 'Vercel'],
+    category: 'Websites',
+    description: 'Learning Management System for selling AI courses with dark-themed design, student dashboard, admin panel, and GCash payment integration.',
+    tech: ['React', 'Supabase', 'Vercel', 'Tailwind'],
     gradient: 'from-purple-600 to-blue-600',
     result: '50+ video lessons',
+  },
+  {
+    title: 'AutomateWithMarky.com',
+    category: 'Websites',
+    description: 'Personal automation portfolio and agency site showcasing 30+ case studies, service pages, and booking system.',
+    tech: ['Next.js', 'Tailwind', 'Framer Motion'],
+    gradient: 'from-blue-600 to-cyan-600',
+    result: '30+ case studies showcased',
+  },
+  {
+    title: 'ReelScript',
+    category: 'Websites',
+    description: 'Netflix-style AI script generation platform with admin dashboard, user auth, and subscription management.',
+    tech: ['React 19', 'TanStack Start', 'Supabase'],
+    gradient: 'from-red-600 to-orange-600',
+    result: 'AI-powered script engine',
+  },
+  {
+    title: 'Phone Story Forge',
+    category: 'Websites',
+    description: 'Content creation platform with video tools, AI story generation, and course management for creators.',
+    tech: ['React', 'Supabase', 'Vercel'],
+    gradient: 'from-green-600 to-teal-600',
+    result: 'Full creator platform',
   },
   {
     title: 'AI Property Visualization',
