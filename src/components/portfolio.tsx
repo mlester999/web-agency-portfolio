@@ -4,50 +4,80 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
-const categories = ['All', 'Websites', 'Automation', 'AI Agents'];
+const categories = ['All', 'Automation', 'AI Agents', 'Websites'];
 
 const projects = [
   {
-    title: 'AI Series Masterclass',
-    category: 'Websites',
-    description: 'Dark-themed learning platform with course management, student dashboard, payment integration.',
-    tech: ['React', 'Supabase', 'Vercel'],
-    gradient: 'from-purple-600 to-blue-600',
-  },
-  {
-    title: 'ReelScript',
-    category: 'Websites',
-    description: 'Netflix-style script generation platform with admin dashboard.',
-    tech: ['React', 'TanStack', 'Supabase'],
-    gradient: 'from-red-600 to-orange-600',
-  },
-  {
-    title: 'Phone Story Forge',
-    category: 'Websites',
-    description: 'Content creation platform with video tools and AI-powered story generation.',
-    tech: ['React', 'Supabase'],
-    gradient: 'from-green-600 to-teal-600',
-  },
-  {
-    title: 'HomeVeal AI Agent',
-    category: 'Automation',
-    description: 'AI voice agent for home remodeling company. Handles appointment booking, lead qualification.',
-    tech: ['n8n', 'Vapi', 'GoHighLevel'],
-    gradient: 'from-orange-600 to-yellow-600',
-  },
-  {
     title: 'Money Reset Voice Agent',
     category: 'AI Agents',
-    description: '24/7 autonomous appointment scheduling via AI voice. Zero missed bookings.',
-    tech: ['n8n', 'Retell AI'],
+    description: '24/7 autonomous appointment scheduling via AI voice. Stitched funnel and voice agent together so scheduling runs without human intervention.',
+    tech: ['n8n', 'Retell AI', 'GoHighLevel'],
     gradient: 'from-pink-600 to-purple-600',
+    result: 'Zero missed bookings',
   },
   {
-    title: 'AutomateWithMarky',
+    title: 'BOF Growth Guide',
+    category: 'Automation',
+    description: 'Fully automated multi-branch content distribution across ClickUp and Google Sheets. Eliminated manual content routing.',
+    tech: ['Make.com', 'ClickUp', 'Google Sheets'],
+    gradient: 'from-blue-600 to-indigo-600',
+    result: '100% automated distribution',
+  },
+  {
+    title: '4BR Guest Follow-Up',
+    category: 'Automation',
+    description: 'QR-based follow-up sequences with tag-based tracking. Zero missed guests, fully automated nurture pipeline.',
+    tech: ['GoHighLevel', 'QR Automation', 'SMS'],
+    gradient: 'from-green-600 to-emerald-600',
+    result: 'Zero missed guests',
+  },
+  {
+    title: 'YouTube Hook Research',
+    category: 'Automation',
+    description: 'Automated viral video analysis and AI-generated ad hook variations with zero manual entry.',
+    tech: ['n8n', 'Gemini AI', 'YouTube API'],
+    gradient: 'from-red-600 to-orange-600',
+    result: 'Zero manual research',
+  },
+  {
+    title: 'AI LinkedIn Content Publishing',
+    category: 'Automation',
+    description: 'Zero-touch LinkedIn publishing after approval via Slack, with full audit trail.',
+    tech: ['n8n', 'Slack', 'OpenAI'],
+    gradient: 'from-cyan-600 to-blue-600',
+    result: 'Zero-touch publishing',
+  },
+  {
+    title: 'Apex Rejuvenation Telehealth',
     category: 'Websites',
-    description: 'Personal automation portfolio showcasing 30+ systems built.',
-    tech: ['Next.js', 'Tailwind'],
-    gradient: 'from-blue-600 to-cyan-600',
+    description: 'Automated booking, confirmation, and no-show follow-up sequences for telehealth funnel.',
+    tech: ['GoHighLevel', 'Funnel', 'SMS/Email'],
+    gradient: 'from-violet-600 to-purple-600',
+    result: 'Automated patient flow',
+  },
+  {
+    title: 'HomeVeal AI Voice Agent',
+    category: 'AI Agents',
+    description: 'AI voice agent for home remodeling company. Handles appointment booking, lead qualification, and service inquiries 24/7.',
+    tech: ['n8n', 'Vapi', 'GoHighLevel'],
+    gradient: 'from-orange-600 to-yellow-600',
+    result: '24/7 lead capture',
+  },
+  {
+    title: 'AI Series Masterclass',
+    category: 'Websites',
+    description: 'Dark-themed learning platform with course management, student dashboard, payment integration, and admin panel.',
+    tech: ['React', 'Supabase', 'Vercel'],
+    gradient: 'from-purple-600 to-blue-600',
+    result: '50+ video lessons',
+  },
+  {
+    title: 'Mitchy Dental Lounge AI Receptionist',
+    category: 'AI Agents',
+    description: 'AI voice receptionist that handles all appointment calls for a dental clinic. Genius-level booking automation.',
+    tech: ['Vapi', 'n8n', 'CRM'],
+    gradient: 'from-teal-600 to-cyan-600',
+    result: '0 missed bookings',
   },
 ];
 
@@ -111,6 +141,12 @@ export default function Portfolio() {
                       {project.category}
                     </span>
                   </div>
+                  {project.result && (
+                    <p className="text-xs text-green-400 mb-2 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                      {project.result}
+                    </p>
+                  )}
                   <p className="text-sm text-neutral-400 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((t) => (
