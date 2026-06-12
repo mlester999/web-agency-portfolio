@@ -1,33 +1,24 @@
-import { headers } from "next/headers";
-import { detectCurrency } from "@/lib/geo";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import StatsBar from "@/components/StatsBar";
-import Services from "@/components/Services";
-import Packages from "@/components/Packages";
-import Portfolio from "@/components/Portfolio";
-import Process from "@/components/Process";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar";
+import Hero from "@/components/hero";
+import StatsBar from "@/components/stats";
+import Services from "@/components/services";
+import Packages from "@/components/packages";
+import Portfolio from "@/components/portfolio";
+import Process from "@/components/process";
+import Testimonials from "@/components/testimonials";
+import FAQ from "@/components/faq";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
-export default async function Home() {
-  const headersList = await headers();
-  const country =
-    headersList.get("x-vercel-ip-country") ||
-    headersList.get("cf-ipcountry") ||
-    "PH";
-  const geo = detectCurrency(country);
-
+export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main>
       <Navbar />
       <Hero />
       <StatsBar />
       <Services />
+      <Packages />
       <Portfolio />
-      <Packages currency={geo.currency} />
       <Process />
       <Testimonials />
       <FAQ />

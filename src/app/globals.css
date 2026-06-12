@@ -1,67 +1,54 @@
 @import "tailwindcss";
 
-:root {
-  --accent: #f97316;
-  --accent-light: #fb923c;
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #111111;
-  --bg-card: #1a1a1a;
-  --text-primary: #fafafa;
-  --text-secondary: #a1a1aa;
-  --border: #27272a;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background: #0a0a0a;
+  color: #e5e5e5;
+  font-family: 'Inter', sans-serif;
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, #f97316, #fb923c, #f59e0b);
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #fb923c, #f97316, #facc15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.glass {
-  background: rgba(26, 26, 26, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(39, 39, 42, 0.8);
+/* Glass card */
+.glass-card {
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(24px);
+  border: 1px solid #1a1a1a;
+  border-radius: 1rem;
 }
 
-.glass:hover {
+.glass-card-hover {
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(24px);
+  border: 1px solid #1a1a1a;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+.glass-card-hover:hover {
   border-color: rgba(249, 115, 22, 0.3);
-  background: rgba(26, 26, 26, 0.95);
-}
-
-.glow-orange {
-  box-shadow: 0 0 40px rgba(249, 115, 22, 0.15);
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
-}
-
-section {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-@media (min-width: 768px) {
-  section {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-  }
+  box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.05);
 }

@@ -1,51 +1,31 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MarkyDev — Premium Websites & Automation for PH & US Businesses",
+  title: "MarkyDev | Premium Websites & AI Automation for Business",
   description:
-    "We build high-converting websites, e-commerce stores, and automation systems for businesses in the Philippines and the United States. Not just pretty designs — results.",
+    "We build conversion-focused websites and AI automation systems. 30+ projects delivered. PH & US clients. Get a free quote.",
   keywords: [
-    "web design Philippines",
-    "website developer PH",
-    "US web design agency",
-    "e-commerce website",
+    "web development",
+    "AI automation",
+    "website design",
+    "n8n automation",
     "business website",
-    "automation",
-    "CRM setup",
-    "lead generation",
-    "MarkyDev",
+    "Philippines web developer",
   ],
-  authors: [{ name: "MarkyDev" }],
   openGraph: {
-    title: "MarkyDev — Premium Websites & Automation",
+    title: "MarkyDev | Premium Websites & AI Automation for Business",
     description:
-      "High-converting websites and automation systems for businesses in PH and US.",
+      "We build conversion-focused websites and AI automation systems. 30+ projects delivered.",
     url: "https://markydev.com",
     siteName: "MarkyDev",
+    locale: "en_US",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "MarkyDev — Premium Websites & Automation",
-    description:
-      "High-converting websites and automation systems for businesses in PH and US.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -55,9 +35,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "MarkyDev",
+              description:
+                "Premium websites and AI automation systems for businesses.",
+              url: "https://markydev.com",
+              email: "hello@markydev.com",
+              telephone: "+63-900-000-0000",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "PH",
+              },
+              priceRange: "$700 - $3000+",
+            }),
+          }}
+        />
+      </head>
+      <body className={`${inter.className} bg-[#0a0a0a] text-white antialiased`}>
         {children}
       </body>
     </html>
